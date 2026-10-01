@@ -1492,6 +1492,117 @@
     @media (max-width: 960px) {
       .about-grid { grid-template-columns: 1fr; gap: 56px; }
     }
+
+    /* ── MISSION & VISION ──────────────────────────────── */
+    #mission-vision {
+      background: var(--black);
+      padding: 110px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    #mission-vision::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.012) 40px,
+        rgba(255,255,255,0.012) 80px
+      );
+    }
+    .mv-header {
+      text-align: center;
+      margin-bottom: 72px;
+      position: relative;
+      z-index: 1;
+    }
+    .mv-header .section-label { justify-content: center; }
+    .mv-header .section-title { color: #fff; }
+    .mv-header .section-title span { color: var(--gold); }
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .mv-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 52px 48px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .mv-card:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.12);
+    }
+    .mv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .mv-card--mission::before { background: var(--red); }
+    .mv-card--vision::before { background: var(--gold); }
+    .mv-watermark {
+      position: absolute;
+      bottom: -16px; right: 16px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 96px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .mv-card--mission .mv-watermark { color: rgba(196,30,58,0.06); }
+    .mv-card--vision .mv-watermark { color: rgba(201,168,76,0.07); }
+    .mv-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+    .mv-card--mission .mv-icon { background: rgba(196,30,58,0.15); border: 1px solid rgba(196,30,58,0.3); }
+    .mv-card--vision .mv-icon { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); }
+    .mv-card--mission .mv-icon svg { stroke: var(--red); }
+    .mv-card--vision .mv-icon svg { stroke: var(--gold); }
+    .mv-icon svg { width: 24px; height: 24px; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .mv-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .mv-card--mission .mv-tag { color: var(--red); }
+    .mv-card--vision .mv-tag { color: var(--gold); }
+    .mv-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .mv-card p {
+      font-size: 15px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.55);
+    }
+    @media (max-width: 768px) {
+      .mv-grid { grid-template-columns: 1fr; }
+      .mv-card { padding: 40px 28px; }
+      .mv-watermark { font-size: 64px; }
+    }
   </style>
 </head>
 <body>
@@ -2127,6 +2238,43 @@
             Serving the Inland Empire with pride since 2004 — Moreno Valley, CA
           </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section id="mission-vision">
+  <div class="container">
+
+    <div class="mv-header" data-aos="fade-up">
+      <div class="section-label">Who We Are</div>
+      <h2 class="section-title">Our <span>Purpose</span> &amp; Direction</h2>
+    </div>
+
+    <div class="mv-grid">
+
+      <!-- Mission -->
+      <div class="mv-card mv-card--mission" data-aos="fade-right">
+        <div class="mv-watermark">Mission</div>
+        <div class="mv-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <div class="mv-tag">Our Mission</div>
+        <h3>Redefining<br/>Excellence</h3>
+        <p>At Caballero Construction Inc, our mission is to redefine the standards of excellence in the home improvement industry. We are dedicated to delivering unparalleled value, craftsmanship, and satisfaction to every homeowner we serve. Our commitment is built on a foundation of professionalism, consistency, and integrity, ensuring that each project we undertake is executed with meticulous attention to detail and a personalized approach.</p>
+      </div>
+
+      <!-- Vision -->
+      <div class="mv-card mv-card--vision" data-aos="fade-left" data-aos-delay="100">
+        <div class="mv-watermark">Vision</div>
+        <div class="mv-icon">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="mv-tag">Our Vision</div>
+        <h3>Building Better<br/>Communities</h3>
+        <p>Our vision is to be the leading provider of home improvement and remodeling services, recognized for transforming the living spaces of our clients into havens of comfort, beauty, and functionality. We aim to build healthier, happier communities by enhancing the homes of our customers, fostering a culture of optimism, and connecting people through the power of transformation — through superior customer service, professionalism, and a relentless pursuit of excellence.</p>
       </div>
 
     </div>
