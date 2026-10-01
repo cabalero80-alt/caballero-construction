@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://caballeroconstructioninc.com/proyectos.html" />
+  <title>Projects & Gallery | Caballeros Construction Inc — Inland Empire CA</title>
+  <meta name="description" content="Browse our featured projects and full photo gallery. Kitchen remodeling, bathroom renovations, flooring, roofing and more. Licensed contractor serving Riverside, Moreno Valley & Inland Empire." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--red:#C41E3A;--red-dark:#960018;--gold:#C9A84C;--gold-light:#E8C96A;--black:#111111;--dark:#1a1a1a;--light-gray:#f5f5f5;--text:#333;--white:#fff}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);overflow-x:hidden}
+    h1,h2,h3,h4{font-family:'Oswald',sans-serif}
+
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,0.2);backdrop-filter:blur(10px);transition:all 0.4s}
+    #navbar.scrolled{background:var(--black);padding:10px 40px;box-shadow:0 2px 30px rgba(0,0,0,0.4)}
+    .nav-logo img{height:56px;transition:height 0.4s;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5))}
+    #navbar.scrolled .nav-logo img{height:44px}
+    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav-links a{color:white;text-decoration:none;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:1px;text-transform:uppercase;transition:color 0.3s;position:relative;padding-bottom:4px}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width 0.3s}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .nav-cta{background:var(--red)!important;padding:10px 22px!important;border-radius:3px}
+    .nav-cta:hover{background:var(--red-dark)!important;color:white!important}
+    .nav-cta::after{display:none!important}
+    .hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px}
+    .hamburger span{display:block;width:26px;height:2px;background:white;transition:all 0.3s}
+
+    /* DROPDOWN */
+    .nav-dropdown{position:relative}
+    .nav-dropdown>a{display:flex!important;align-items:center;gap:5px}
+    .dropdown-arrow{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;transition:transform 0.3s;flex-shrink:0}
+    .nav-dropdown:hover .dropdown-arrow,.nav-dropdown.open .dropdown-arrow{transform:rotate(180deg)}
+    .dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-10px);background:var(--black);width:460px;padding:10px 0;border-top:3px solid var(--red);box-shadow:0 24px 60px rgba(0,0,0,0.7);opacity:0;pointer-events:none;transition:opacity 0.25s ease,transform 0.25s ease;display:grid;grid-template-columns:1fr 1fr;z-index:1100}
+    .dropdown-menu--sm{width:280px;grid-template-columns:1fr}
+    .nav-dropdown:hover .dropdown-menu,.nav-dropdown.open .dropdown-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+    .dropdown-menu a{display:block;padding:9px 20px;color:rgba(255,255,255,0.65)!important;font-family:'Oswald',sans-serif;font-size:13px!important;letter-spacing:0.6px;text-transform:uppercase;text-decoration:none;border-left:2px solid transparent;transition:color 0.2s,border-color 0.2s,background 0.2s}
+    .dropdown-menu a:hover{color:var(--gold)!important;border-left-color:var(--gold);background:rgba(201,168,76,0.07)}
+    .dropdown-menu a::after{display:none!important}
+
+    /* HERO */
+    .proj-hero{min-height:55vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:var(--black)}
+    .proj-hero-bg{position:absolute;inset:0;background:url('images/project-6.jpg') center/cover no-repeat;opacity:0.22}
+    .proj-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.85) 0%,rgba(196,30,58,0.15) 100%)}
+    .proj-hero-content{position:relative;z-index:2;padding:100px 40px 70px;max-width:1180px;width:100%;margin:0 auto;color:white}
+    .hero-label{display:inline-flex;align-items:center;gap:10px;font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:20px}
+    .hero-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+    .proj-hero-content h1{font-size:clamp(44px,7vw,78px);font-weight:700;text-transform:uppercase;line-height:1.02;margin-bottom:20px}
+    .proj-hero-content h1 span{color:var(--gold)}
+    .proj-hero-content p{font-size:17px;color:rgba(255,255,255,0.7);max-width:580px;line-height:1.7}
+    .proj-hero-stats{display:flex;gap:40px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1)}
+    .hs{display:flex;flex-direction:column;gap:3px}
+    .hs-num{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;color:var(--gold);line-height:1}
+    .hs-lbl{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase}
+
+    /* SHARED SECTION */
+    .container{max-width:1180px;margin:0 auto}
+    .section-label{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:12px}
+    .section-label::before{content:'';width:28px;height:2px;background:var(--red)}
+    .section-title{font-size:clamp(28px,4vw,46px);font-weight:700;text-transform:uppercase;line-height:1.1;margin-bottom:14px}
+    .section-title span{color:var(--red)}
+    .section-sub{font-size:15px;color:#666;line-height:1.7;max-width:560px}
+
+    /* FEATURED PROJECTS */
+    #featured{background:var(--black);padding:110px 20px}
+    #featured .section-title{color:#fff}
+    #featured .section-title span{color:var(--gold)}
+    #featured .section-sub{color:rgba(255,255,255,0.5)}
+    #featured .section-label{color:var(--gold)}
+    #featured .section-label::before{background:var(--gold)}
+    .fp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+    .fp-card{background:#1a1a1a;border:1px solid rgba(255,255,255,0.06);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s}
+    .fp-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+    .fp-img-wrap{position:relative;height:260px;overflow:hidden}
+    .fp-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+    .fp-card:hover .fp-img-wrap img{transform:scale(1.07)}
+    .fp-badge{position:absolute;top:16px;left:16px;background:var(--red);color:white;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:2px}
+    .fp-number{position:absolute;bottom:16px;right:16px;width:44px;height:44px;background:var(--gold);color:var(--black);font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .fp-body{padding:28px}
+    .fp-meta{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+    .fp-meta svg{width:12px;height:12px;stroke:var(--gold);fill:none;stroke-width:2}
+    .fp-body h3{font-size:20px;font-weight:700;text-transform:uppercase;color:white;margin-bottom:12px;line-height:1.2}
+    .fp-body p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:20px}
+    .fp-details{display:flex;gap:18px;padding:14px 0;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:20px}
+    .fp-detail{display:flex;flex-direction:column;gap:3px}
+    .fp-detail-label{font-size:10px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:1px}
+    .fp-detail-value{font-family:'Oswald',sans-serif;font-size:14px;color:var(--gold)}
+    .fp-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:white;font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.2);padding:9px 18px;border-radius:2px;transition:all 0.3s}
+    .fp-btn:hover{background:var(--red);border-color:var(--red)}
+
+    /* GALLERY */
+    #gallery{background:#fff;padding:110px 20px}
+    .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:56px}
+    .gal-item{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3}
+    .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease,filter 0.4s}
+    .gal-item:hover img{transform:scale(1.08);filter:brightness(0.75)}
+    .gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:14px}
+    .gal-item:hover .gal-overlay{opacity:1}
+    .gal-label{font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:white}
+    .gal-zoom{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.6);opacity:0;transition:all 0.3s;width:40px;height:40px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+    .gal-zoom svg{width:18px;height:18px;stroke:white;fill:none;stroke-width:2}
+    .gal-item:hover .gal-zoom{opacity:1;transform:translate(-50%,-50%) scale(1)}
+    .gal-item.wide{grid-column:span 2}
+
+    /* LIGHTBOX */
+    #lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.96);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
+    #lightbox.active{opacity:1;pointer-events:all}
+    #lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border:1px solid rgba(255,255,255,0.08)}
+    .lb-close{position:absolute;top:20px;right:24px;color:white;font-size:36px;cursor:pointer;line-height:1;opacity:0.6;transition:opacity 0.2s;z-index:10}
+    .lb-close:hover{opacity:1}
+    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:white;font-size:44px;cursor:pointer;padding:0 18px 4px;border-radius:3px;transition:background 0.2s;line-height:1}
+    .lb-nav:hover{background:rgba(255,255,255,0.2)}
+    .lb-prev{left:20px}
+    .lb-next{right:20px}
+    .lb-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.45);font-size:13px;font-family:'Oswald',sans-serif;letter-spacing:2px}
+    .lb-caption{position:absolute;bottom:42px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.7);font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+
+    /* SERVICES */
+    #services-section{background:var(--light-gray);padding:110px 20px}
+    .svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:56px}
+    .svc-card{background:#fff;border-top:3px solid var(--red);padding:28px 22px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:12px;transition:all 0.3s;border-radius:0 0 3px 3px}
+    .svc-card:hover{background:var(--red);color:white;transform:translateY(-5px);box-shadow:0 12px 40px rgba(196,30,58,0.3)}
+    .svc-card:hover .svc-icon svg{stroke:white}
+    .svc-card:hover .svc-desc{color:rgba(255,255,255,0.75)}
+    .svc-icon{width:44px;height:44px;background:rgba(196,30,58,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background 0.3s;flex-shrink:0}
+    .svc-card:hover .svc-icon{background:rgba(255,255,255,0.15)}
+    .svc-icon svg{width:20px;height:20px;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke 0.3s}
+    .svc-card h3{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;line-height:1.2}
+    .svc-desc{font-size:12px;color:#888;line-height:1.6;transition:color 0.3s}
+
+    /* CONTACT CTA */
+    #contact-cta{background:var(--black);padding:110px 20px;text-align:center;position:relative;overflow:hidden}
+    #contact-cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.015) 20px,rgba(255,255,255,0.015) 40px)}
+    .cta-wrap{position:relative;z-index:1;max-width:680px;margin:0 auto}
+    .cta-wrap h2{font-family:'Oswald',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:700;color:white;text-transform:uppercase;line-height:1.1;margin-bottom:16px}
+    .cta-wrap h2 span{color:var(--gold)}
+    .cta-wrap p{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px}
+    .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn-red-lg{background:var(--red);color:white;padding:16px 36px;font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:3px;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px}
+    .btn-red-lg:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(196,30,58,0.45)}
+    .btn-red-lg svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5}
+    .btn-outline-lg{background:transparent;color:white;padding:16px 36px;font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:2px solid rgba(255,255,255,0.3);border-radius:3px;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px}
+    .btn-outline-lg:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+    /* FOOTER */
+    footer{background:#0a0a0a;color:rgba(255,255,255,0.7);padding:52px 20px 28px}
+    .footer-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:20px}
+    .footer-inner img{height:56px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.5))}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;transition:color 0.2s}
+    .footer-links a:hover{color:var(--gold)}
+    .footer-bottom{max-width:1180px;margin:0 auto;font-size:12px;color:rgba(255,255,255,0.25);text-align:center}
+
+    /* RESPONSIVE */
+    @media(max-width:1100px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:960px){
+      .fp-grid{grid-template-columns:1fr 1fr}
+      .gal-grid{grid-template-columns:repeat(3,1fr)}
+      .gal-item.wide{grid-column:span 1}
+    }
+    @media(max-width:640px){
+      #navbar{padding:14px 20px;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(0,0,0,0.85)}
+      .nav-links{display:none;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.97);justify-content:center;align-items:center;gap:28px;z-index:1001;overflow-y:auto;padding:60px 20px 40px}
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:22px}
+      .hamburger{display:flex;position:relative;z-index:1002}
+      .dropdown-menu,.dropdown-menu--sm{position:static;transform:none!important;opacity:1!important;pointer-events:all;width:100%;max-width:320px;box-shadow:none;border-top:none;border-left:2px solid var(--red);padding:0;display:none;grid-template-columns:1fr;background:rgba(255,255,255,0.04);margin-top:6px}
+      .nav-dropdown.open .dropdown-menu,.nav-dropdown.open .dropdown-menu--sm{display:grid}
+      .dropdown-menu a{font-size:15px!important;padding:9px 24px;border-left:none}
+      .nav-dropdown>a{justify-content:center}
+      .fp-grid{grid-template-columns:1fr}
+      .gal-grid{grid-template-columns:repeat(2,1fr)}
+      .svc-grid{grid-template-columns:repeat(2,1fr)}
+      .proj-hero-content{padding:100px 20px 50px}
+      .proj-hero-stats{gap:24px;flex-wrap:wrap}
+    }
+    @media(max-width:400px){.svc-grid{grid-template-columns:1fr}}
+  </style>
+  <style>
+    /* MOBILE DRAWER */
+    #mn-overlay{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.65);opacity:0;pointer-events:none;transition:opacity 0.3s}
+    #mn-overlay.mn-open{opacity:1;pointer-events:all}
+    #mn-drawer{position:fixed;top:0;right:0;bottom:0;width:min(360px,92vw);background:#111;z-index:9999;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;overflow:hidden;font-family:'Inter',sans-serif;box-shadow:-8px 0 40px rgba(0,0,0,0.6)}
+    #mn-drawer.mn-open{transform:translateX(0)}
+    .mn-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;background:#0c0c0c}
+    .mn-logo{height:40px;filter:drop-shadow(0 1px 8px rgba(0,0,0,0.6))}
+    .mn-close{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.1);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);transition:all 0.2s}
+    .mn-close:hover{background:rgba(255,255,255,0.07);color:white}
+    .mn-nav{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .mn-item{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;color:white;text-decoration:none;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.18s;-webkit-tap-highlight-color:transparent;background:none;width:100%;box-sizing:border-box}
+    .mn-item:hover,.mn-item:active{background:rgba(255,255,255,0.04)}
+    .mn-item-left{display:flex;align-items:center;gap:13px}
+    .mn-label{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:white}
+    .mn-icon{width:36px;height:36px;border-radius:8px;background:rgba(196,30,58,0.12);border:1px solid rgba(196,30,58,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .mn-icon svg{width:16px;height:16px;stroke:#C41E3A;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .mn-chevron{width:15px;height:15px;stroke:rgba(255,255,255,0.2);fill:none;stroke-width:2.5;flex-shrink:0;transition:transform 0.25s,stroke 0.25s;stroke-linecap:round;stroke-linejoin:round}
+    .mn-has-sub.mn-sub-open .mn-chevron{transform:rotate(90deg);stroke:#C9A84C}
+    .mn-sub{max-height:0;overflow:hidden;transition:max-height 0.38s ease;background:rgba(0,0,0,0.25)}
+    .mn-sub.mn-sub-open{max-height:800px}
+    .mn-sub-item{display:flex;align-items:center;gap:10px;padding:12px 18px 12px 67px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.03);transition:color 0.15s,background 0.15s;-webkit-tap-highlight-color:transparent;font-family:'Inter',sans-serif}
+    .mn-sub-item:hover,.mn-sub-item:active{color:#C9A84C;background:rgba(201,168,76,0.05)}
+    .mn-sub-emoji{font-size:14px;flex-shrink:0;width:20px;text-align:center}
+    .mn-ctas{padding:14px 14px 10px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,0.07);flex-shrink:0;background:#0c0c0c}
+    .mn-cta{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 16px;border-radius:8px;font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;text-decoration:none;transition:all 0.18s;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;width:100%;box-sizing:border-box}
+    .mn-cta svg{width:16px;height:16px;flex-shrink:0}
+    .mn-cta-call{background:#C41E3A;color:white}
+    .mn-cta-wa{background:#25D366;color:white}
+    .mn-cta-est{background:rgba(201,168,76,0.1);color:#C9A84C;border:1px solid rgba(201,168,76,0.22)!important}
+    .mn-footer-note{padding:10px 18px 20px;text-align:center;font-size:10px;color:rgba(255,255,255,0.15);letter-spacing:1.5px;font-family:'Oswald',sans-serif;text-transform:uppercase;flex-shrink:0;background:#0c0c0c}
+    .hamburger{transition:all 0.3s}
+    .hamburger.mn-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.mn-open span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .hamburger.mn-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    @media(max-width:640px){.nav-links{display:none!important}}
+    @media(min-width:641px){#mn-overlay,#mn-drawer{display:none!important}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/logo-new.png" alt="Caballeros Construction Inc" /></a>
+  <ul class="nav-links" id="navLinks">
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)">Services <svg class="dropdown-arrow" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></a>
+      <div class="dropdown-menu">
+        <a href="services/kitchen-remodeling.html">Kitchen Remodeling</a>
+        <a href="services/bathroom-remodeling.html">Bathroom Remodeling</a>
+        <a href="services/flooring.html">Flooring</a>
+        <a href="services/drywall-framing.html">Drywall &amp; Framing</a>
+        <a href="services/painting.html">Painting</a>
+        <a href="services/roofing.html">Roofing</a>
+        <a href="services/plumbing.html">Plumbing</a>
+        <a href="services/electrical.html">Electrical Work</a>
+        <a href="services/doors-windows.html">Doors &amp; Windows</a>
+        <a href="services/concrete-masonry.html">Concrete &amp; Masonry</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)" class="active">Our Work <svg class="dropdown-arrow" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></a>
+      <div class="dropdown-menu dropdown-menu--sm">
+        <a href="portafolio.html">Portfolio &amp; Reviews</a>
+        <a href="proyectos.html" style="color:var(--gold)!important">Featured Projects</a>
+      </div>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)">Areas <svg class="dropdown-arrow" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></a>
+      <div class="dropdown-menu">
+        <a href="areas/riverside.html">Riverside</a>
+        <a href="areas/moreno-valley.html">Moreno Valley</a>
+        <a href="areas/corona.html">Corona</a>
+        <a href="areas/jurupa-valley.html">Jurupa Valley</a>
+        <a href="areas/fontana.html">Fontana</a>
+        <a href="areas/ontario.html">Ontario</a>
+        <a href="areas/rancho-cucamonga.html">Rancho Cucamonga</a>
+        <a href="areas/san-bernardino.html">San Bernardino</a>
+      </div>
+    </li>
+    <li><a href="#contact-cta" class="nav-cta" onclick="event.preventDefault();openEstimator()">Free Estimate</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div id="mn-overlay" onclick="toggleMenu()"></div>
+<div id="mn-drawer">
+  <div class="mn-head">
+    <a href="index.html"><img src="images/logo-new.png" alt="Caballeros Construction" class="mn-logo"></a>
+    <button class="mn-close" onclick="toggleMenu()" aria-label="Close"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2.5" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="mn-nav">
+    <div class="mn-item mn-has-sub" onclick="mnToggleSub(this)">
+      <div class="mn-item-left"><span class="mn-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span><span class="mn-label">Services</span></div>
+      <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
+    </div>
+    <div class="mn-sub">
+      <a href="services/kitchen-remodeling.html" class="mn-sub-item"><span class="mn-sub-emoji">🍳</span>Kitchen Remodeling</a>
+      <a href="services/bathroom-remodeling.html" class="mn-sub-item"><span class="mn-sub-emoji">🚿</span>Bathroom Remodeling</a>
+      <a href="services/flooring.html" class="mn-sub-item"><span class="mn-sub-emoji">🪵</span>Flooring</a>
+      <a href="services/drywall-framing.html" class="mn-sub-item"><span class="mn-sub-emoji">🧱</span>Drywall &amp; Framing</a>
+      <a href="services/painting.html" class="mn-sub-item"><span class="mn-sub-emoji">🎨</span>Painting</a>
+      <a href="services/roofing.html" class="mn-sub-item"><span class="mn-sub-emoji">🏠</span>Roofing</a>
+      <a href="services/plumbing.html" class="mn-sub-item"><span class="mn-sub-emoji">🔧</span>Plumbing</a>
+      <a href="services/electrical.html" class="mn-sub-item"><span class="mn-sub-emoji">⚡</span>Electrical Work</a>
+      <a href="services/doors-windows.html" class="mn-sub-item"><span class="mn-sub-emoji">🚪</span>Doors &amp; Windows</a>
+      <a href="services/concrete-masonry.html" class="mn-sub-item"><span class="mn-sub-emoji">🏗️</span>Concrete &amp; Masonry</a>
+    </div>
+    <div class="mn-item mn-has-sub" onclick="mnToggleSub(this)">
+      <div class="mn-item-left"><span class="mn-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span><span class="mn-label">Our Work</span></div>
+      <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
+    </div>
+    <div class="mn-sub">
+      <a href="portafolio.html" class="mn-sub-item"><span class="mn-sub-emoji">🖼️</span>Portfolio &amp; Reviews</a>
+      <a href="proyectos.html" class="mn-sub-item"><span class="mn-sub-emoji">⭐</span>Featured Projects</a>
+    </div>
+    <a href="blog.html" class="mn-item">
+      <div class="mn-item-left"><span class="mn-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="mn-label">Blog</span></div>
+      <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
+    </a>
+    <div class="mn-item mn-has-sub" onclick="mnToggleSub(this)">
+      <div class="mn-item-left"><span class="mn-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="mn-label">Service Areas</span></div>
+      <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
+    </div>
+    <div class="mn-sub">
+      <a href="areas/riverside.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Riverside</a>
+      <a href="areas/moreno-valley.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Moreno Valley</a>
+      <a href="areas/corona.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Corona</a>
+      <a href="areas/jurupa-valley.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Jurupa Valley</a>
+      <a href="areas/fontana.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Fontana</a>
+      <a href="areas/ontario.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Ontario</a>
+      <a href="areas/rancho-cucamonga.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Rancho Cucamonga</a>
+      <a href="areas/san-bernardino.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>San Bernardino</a>
+    </div>
+  </div>
+  <div class="mn-ctas">
+    <a href="#" onclick="event.preventDefault();openContact()" class="mn-cta mn-cta-call"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (562) 394-6814</a>
+    <a href="https://wa.me/19512836742?text=Hi!%20I%27d%20like%20more%20info%20about%20Caballero%20Construction." target="_blank" class="mn-cta mn-cta-wa"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg>WhatsApp</a>
+    <button onclick="if(typeof openEstimator!=='undefined')openEstimator()" class="mn-cta mn-cta-est"><svg viewBox="0 0 24 24" stroke="#C9A84C" fill="none" stroke-width="2.5"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3"/><path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3z"/></svg>Free Estimate</button>
+  </div>
+  <div class="mn-footer-note">Licensed Contractor · Moreno Valley, CA</div>
+</div>
+
+<!-- HERO -->
+<section class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <div class="proj-hero-overlay"></div>
+  <div class="proj-hero-content">
+    <div class="hero-label">Caballeros Construction Inc</div>
+    <h1>Our <span>Projects</span><br/>&amp; Gallery</h1>
+    <p>Real work. Real results. Browse our featured case studies and explore over 500 completed projects across the Inland Empire.</p>
+    <div class="proj-hero-stats">
+      <div class="hs"><span class="hs-num">500+</span><span class="hs-lbl">Projects Done</span></div>
+      <div class="hs"><span class="hs-num">20+</span><span class="hs-lbl">Years Active</span></div>
+      <div class="hs"><span class="hs-num">4.6★</span><span class="hs-lbl">Google Rating</span></div>
+      <div class="hs"><span class="hs-num">10</span><span class="hs-lbl">Services</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section id="featured">
+  <div class="container">
+    <div data-aos="fade-up">
+      <div class="section-label">Case Studies</div>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <p class="section-sub">Three of our most representative jobs — each completed with the highest standards of quality and guaranteed satisfaction.</p>
+    </div>
+    <div class="fp-grid">
+
+      <!-- Project 1 -->
+      <div class="fp-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="fp-img-wrap">
+          <img src="images/project-3.jpg" alt="Hardwood floor staircase transformation" />
+          <div class="fp-badge">Flooring</div>
+          <div class="fp-number">01</div>
+        </div>
+        <div class="fp-body">
+          <div class="fp-meta">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Jurupa Valley, CA
+          </div>
+          <h3>Complete Staircase &amp; Hardwood Floor Transformation</h3>
+          <p>Full replacement of worn carpet with premium engineered hardwood throughout the living room, hallway, and staircase. Includes baseboards and stair nosing for a seamless finish.</p>
+          <div class="fp-details">
+            <div class="fp-detail"><span class="fp-detail-label">Duration</span><span class="fp-detail-value">4 Days</span></div>
+            <div class="fp-detail"><span class="fp-detail-label">Service</span><span class="fp-detail-value">Flooring</span></div>
+            <div class="fp-detail"><span class="fp-detail-label">Result</span><span class="fp-detail-value">5★ Review</span></div>
+          </div>
+          <a href="services/flooring.html" class="fp-btn">View Service →</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="fp-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="fp-img-wrap">
+          <img src="images/project-2.jpg" alt="Master bathroom marble vanity remodel" />
+          <div class="fp-badge">Bathroom</div>
+          <div class="fp-number">02</div>
+        </div>
+        <div class="fp-body">
+          <div class="fp-meta">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Riverside, CA
+          </div>
+          <h3>Master Bathroom Marble Vanity Remodel</h3>
+          <p>Complete gut and rebuild of the master bathroom. New custom vanity with Calacatta marble countertop, under-mount sink, updated plumbing, recessed lighting, and full tile work.</p>
+          <div class="fp-details">
+            <div class="fp-detail"><span class="fp-detail-label">Duration</span><span class="fp-detail-value">6 Days</span></div>
+            <div class="fp-detail"><span class="fp-detail-label">Service</span><span class="fp-detail-value">Bathroom</span></div>
+            <div class="fp-detail"><span class="fp-detail-label">Result</span><span class="fp-detail-value">5★ Review</span></div>
+          </div>
+          <a href="services/bathroom-remodeling.html" class="fp-btn">View Service →</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="fp-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="fp-img-wrap">
+          <img src="images/project-16.jpg" alt="Full room renovation drywall framing" />
+          <div class="fp-badge">Renovation</div>
+          <div class="fp-number">03</div>
+        </div>
+        <div class="fp-body">
+          <div class="fp-meta">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Corona, CA
+          </div>
+          <h3>Full Room Gut, Framing &amp; Drywall Renovation</h3>
+          <p>Complete demolition and rebuild of a bedroom-to-living space conversion. New framing, insulation, drywall finishing, archway construction, electrical rough-in, and smooth texture finish.</p>
+          <div class="fp-details">
+            <div class="fp-detail"><span class="fp-detail-label">Duration</span><span class="fp-detail-value">8 Days</span></div>
+            <div class="fp-detail"><span class="fp-detail-label">Service</span><span class="fp-detail-value">Drywall</span></div>
+            <div class="fp-detail"><span class="fp-detail-label">Result</span><span class="fp-detail-value">5★ Review</span></div>
+          </div>
+          <a href="services/drywall-framing.html" class="fp-btn">View Service →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div data-aos="fade-up">
+      <div class="section-label">Photo Gallery</div>
+      <h2 class="section-title">Real Projects, <span>Real Results</span></h2>
+      <p class="section-sub">Click any image to view full size. Over 500 projects completed across the Inland Empire.</p>
+    </div>
+    <div class="gal-grid" data-aos="fade-up" data-aos-delay="80">
+      <div class="gal-item wide" onclick="openLb(0)"><img src="images/project-3.jpg" alt="Hardwood Flooring" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Hardwood Flooring</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(1)"><img src="images/project-1.jpg" alt="Tile & Flooring" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Tile &amp; Flooring</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(2)"><img src="images/project-6.jpg" alt="Kitchen Cabinets" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Kitchen Cabinets</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(3)"><img src="images/project-4.jpg" alt="Home Renovation" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Home Renovation</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(4)"><img src="images/project-9.jpg" alt="Interior Remodel" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Interior Remodel</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item wide" onclick="openLb(5)"><img src="images/project-2.jpg" alt="Bathroom Vanity" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Bathroom Vanity</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(6)"><img src="images/project-7.jpg" alt="Interior Work" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Interior Work</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(7)"><img src="images/project-8.jpg" alt="Home Improvement" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Home Improvement</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(8)"><img src="images/project-10.jpg" alt="Renovation" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Renovation</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(9)"><img src="images/project-11.jpg" alt="Concrete Work" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Concrete Work</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(10)"><img src="images/project-14.jpg" alt="Wall Framing" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Wall Framing</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item wide" onclick="openLb(11)"><img src="images/project-16.jpg" alt="Drywall Finishing" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Drywall Finishing</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(12)"><img src="images/project-12.jpg" alt="Exterior Work" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Exterior Work</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(13)"><img src="images/project-13.jpg" alt="Home Improvement" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Home Improvement</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(14)"><img src="images/project-15.jpg" alt="Construction" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Construction</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(15)"><img src="images/project-19.jpg" alt="Interior Renovation" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Interior Renovation</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(16)"><img src="images/project-5.jpg" alt="Exterior Painting" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Exterior Painting</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" onclick="openLb(17)"><img src="images/project-20.jpg" alt="Home Improvement" loading="lazy"/><div class="gal-overlay"><span class="gal-label">Home Improvement</span></div><div class="gal-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="if(event.target===this)closeLb()">
+  <span class="lb-close" onclick="closeLb()">&#215;</span>
+  <button class="lb-nav lb-prev" onclick="changeLb(-1)">&#8249;</button>
+  <img id="lbImg" src="" alt="Project photo" />
+  <button class="lb-nav lb-next" onclick="changeLb(1)">&#8250;</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services-section">
+  <div class="container">
+    <div data-aos="fade-up">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <p class="section-sub">We offer 10 professional home improvement services. Every job is done by our licensed team — on time, on budget, with quality guaranteed.</p>
+    </div>
+    <div class="svc-grid" data-aos="fade-up" data-aos-delay="80">
+
+      <a href="services/kitchen-remodeling.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 9h18v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M3 9V5a2 2 0 012-2h14a2 2 0 012 2v4"/><line x1="9" y1="14" x2="15" y2="14"/></svg></div>
+        <h3>Kitchen Remodeling</h3>
+        <p class="svc-desc">Custom cabinets, countertops, islands, and full kitchen redesigns.</p>
+      </a>
+
+      <a href="services/bathroom-remodeling.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2.25"/><line x1="4" y1="19" x2="4" y2="21"/><line x1="20" y1="19" x2="20" y2="21"/></svg></div>
+        <h3>Bathroom Remodeling</h3>
+        <p class="svc-desc">Full renovations, tile work, vanities, showers, and tub replacement.</p>
+      </a>
+
+      <a href="services/roofing.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <h3>Roofing</h3>
+        <p class="svc-desc">New roofs, repairs, shingles, tile, and leak protection.</p>
+      </a>
+
+      <a href="services/flooring.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></div>
+        <h3>Flooring</h3>
+        <p class="svc-desc">Hardwood, LVP, tile, carpet installation and removal.</p>
+      </a>
+
+      <a href="services/painting.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M2 21c0-3 1.85-5.36 5-6 3-.63 6-2 6-6"/><circle cx="12" cy="5" r="3"/><path d="M17 10l-1 1 1 1 1-1-1-1z"/><path d="M17 6l4 4-4.5 4.5a2.12 2.12 0 01-3-3L17 6z"/></svg></div>
+        <h3>Painting</h3>
+        <p class="svc-desc">Interior and exterior painting with premium materials.</p>
+      </a>
+
+      <a href="services/drywall-framing.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Drywall &amp; Framing</h3>
+        <p class="svc-desc">New walls, patches, texture, and structural framing.</p>
+      </a>
+
+      <a href="services/plumbing.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg></div>
+        <h3>Plumbing</h3>
+        <p class="svc-desc">Fixtures, water heaters, sinks, and pipe installations.</p>
+      </a>
+
+      <a href="services/electrical.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg></div>
+        <h3>Electrical Work</h3>
+        <p class="svc-desc">Panel upgrades, outlets, lighting, and ceiling fans.</p>
+      </a>
+
+      <a href="services/doors-windows.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><circle cx="6" cy="12" r="1"/></svg></div>
+        <h3>Doors &amp; Windows</h3>
+        <p class="svc-desc">Interior and exterior door and window installation.</p>
+      </a>
+
+      <a href="services/concrete-masonry.html" class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><polygon points="12,2 2,7 2,17 12,22 22,17 22,7"/><polyline points="2,7 12,12 22,7"/><line x1="12" y1="12" x2="12" y2="22"/></svg></div>
+        <h3>Concrete &amp; Masonry</h3>
+        <p class="svc-desc">Driveways, patios, retaining walls, and block work.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section id="contact-cta">
+  <div class="cta-wrap" data-aos="fade-up">
+    <div class="section-label" style="justify-content:center;color:var(--gold)"><span style="width:28px;height:2px;background:var(--gold);display:inline-block"></span>Get Started</div>
+    <h2>Ready to Start<br/>Your <span>Project?</span></h2>
+    <p>Get a free, no-obligation estimate from our licensed team. We serve Riverside, Moreno Valley, Corona, and all of the Inland Empire.</p>
+    <div class="cta-buttons">
+      <button class="btn-red-lg" onclick="openEstimator()">
+        <svg viewBox="0 0 24 24"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3"/><path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3z"/></svg>
+        Free Estimate
+      </button>
+      <button class="btn-outline-lg" onclick="openContact()">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call or Text
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img src="images/logo-new.png" alt="Caballeros Construction Inc" />
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="portafolio.html">Portfolio</a>
+      <a href="proyectos.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="areas/riverside.html">Riverside</a>
+      <a href="areas/moreno-valley.html">Moreno Valley</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2024 Caballeros Construction Inc · Licensed General Contractor · 25860 Thundercloud Ct, Moreno Valley CA 92553 · (562) 394-6814
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="estimator.js"></script>
+<script src="chatbot.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+
+  window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  function toggleMenu() {
+    var d = document.getElementById('mn-drawer');
+    var o = document.getElementById('mn-overlay');
+    var h = document.getElementById('hamburger');
+    var op = d.classList.contains('mn-open');
+    d.classList.toggle('mn-open', !op);
+    o.classList.toggle('mn-open', !op);
+    if (h) h.classList.toggle('mn-open', !op);
+    document.body.style.overflow = op ? '' : 'hidden';
+  }
+  function mnToggleSub(el) {
+    el.classList.toggle('mn-sub-open');
+    el.nextElementSibling.classList.toggle('mn-sub-open');
+  }
+
+  // Desktop dropdown toggle
+  document.querySelectorAll('.nav-dropdown > a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.parentElement.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+    }
+  });
+
+  // Gallery lightbox
+  var lbImages = [
+    {src:'images/project-3.jpg', label:'Hardwood Flooring'},
+    {src:'images/project-1.jpg', label:'Tile & Flooring'},
+    {src:'images/project-6.jpg', label:'Kitchen Cabinets'},
+    {src:'images/project-4.jpg', label:'Home Renovation'},
+    {src:'images/project-9.jpg', label:'Interior Remodel'},
+    {src:'images/project-2.jpg', label:'Bathroom Vanity'},
+    {src:'images/project-7.jpg', label:'Interior Work'},
+    {src:'images/project-8.jpg', label:'Home Improvement'},
+    {src:'images/project-10.jpg', label:'Renovation'},
+    {src:'images/project-11.jpg', label:'Concrete Work'},
+    {src:'images/project-14.jpg', label:'Wall Framing'},
+    {src:'images/project-16.jpg', label:'Drywall Finishing'},
+    {src:'images/project-12.jpg', label:'Exterior Work'},
+    {src:'images/project-13.jpg', label:'Home Improvement'},
+    {src:'images/project-15.jpg', label:'Construction'},
+    {src:'images/project-19.jpg', label:'Interior Renovation'},
+    {src:'images/project-5.jpg', label:'Exterior Painting'},
+    {src:'images/project-20.jpg', label:'Home Improvement'}
+  ];
+  var lbCurrent = 0;
+
+  function openLb(idx) {
+    lbCurrent = idx;
+    document.getElementById('lbImg').src = lbImages[idx].src;
+    document.getElementById('lbCounter').textContent = (idx + 1) + ' / ' + lbImages.length;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function changeLb(dir) {
+    lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+    document.getElementById('lbImg').src = lbImages[lbCurrent].src;
+    document.getElementById('lbCounter').textContent = (lbCurrent + 1) + ' / ' + lbImages.length;
+  }
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'ArrowRight') changeLb(1);
+    if (e.key === 'ArrowLeft') changeLb(-1);
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+</body>
+</html>
