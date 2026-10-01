@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Caballeros Construction Inc — Riverside &Licensed Contractor | Inland Empire Contractor Tips</title>
-  <meta name="description" content="Helpful guides, cost estimates, and tips for homeowners in Riverside, Corona, Moreno Valley & theLicensed Contractor | Inland Empire from Caballeros Construction — 20+ years of experience." />
-  <meta name="keywords" content="contractor blog Riverside CA, home remodeling tipsLicensed Contractor | Inland Empire, kitchen remodel cost Riverside, bathroom renovation guide Corona CA" />
-  <link rel="canonical" href="https://julioolivodeveloper.github.io/caballero-construction/blog.html" />
+  <title>Blog | Caballeros Construction Inc — Riverside & Inland Empire Contractor Tips</title>
+  <meta name="description" content="Helpful guides, cost estimates, and tips for homeowners in Riverside, Corona, Moreno Valley & the Inland Empire from Caballeros Construction — 20+ years of experience." />
+  <meta name="keywords" content="contractor blog Riverside CA, home remodeling tips Inland Empire, kitchen remodel cost Riverside, bathroom renovation guide Corona CA" />
+  <link rel="canonical" href="https://caballeroconstructioninc.com/blog.html" />
   <meta property="og:title" content="Blog | Caballeros Construction Inc" />
-  <meta property="og:description" content="Helpful guides and cost tips forLicensed Contractor | Inland Empire homeowners from your local contractor." />
-  <meta property="og:url" content="https://julioolivodeveloper.github.io/caballero-construction/blog.html" />
+  <meta property="og:description" content="Helpful guides and cost tips for Inland Empire homeowners from your local contractor." />
+  <meta property="og:url" content="https://caballeroconstructioninc.com/blog.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -78,9 +78,27 @@
         <a href="services/concrete-masonry.html">Concrete &amp; Masonry</a>
       </div>
     </li>
-    <li><a href="portafolio.html">Our Work</a></li>
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)">Our Work <svg class="dropdown-arrow" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></a>
+      <div class="dropdown-menu dropdown-menu--sm">
+        <a href="portafolio.html">Portfolio &amp; Reviews</a>
+        <a href="proyectos.html">Featured Projects</a>
+      </div>
+    </li>
     <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="index.html#areas">Areas</a></li>
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)">Areas <svg class="dropdown-arrow" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></a>
+      <div class="dropdown-menu dropdown-menu--sm">
+        <a href="areas/moreno-valley.html">Moreno Valley</a>
+        <a href="areas/riverside.html">Riverside</a>
+        <a href="areas/corona.html">Corona</a>
+        <a href="areas/ontario.html">Ontario</a>
+        <a href="areas/rancho-cucamonga.html">Rancho Cucamonga</a>
+        <a href="areas/san-bernardino.html">San Bernardino</a>
+        <a href="areas/fontana.html">Fontana</a>
+        <a href="areas/perris.html">Perris</a>
+      </div>
+    </li>
     <li><a href="index.html#contact" class="nav-cta">Free Estimate</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -111,13 +129,17 @@
       <a href="services/doors-windows.html" class="mn-sub-item"><span class="mn-sub-emoji">🚪</span>Doors &amp; Windows</a>
       <a href="services/concrete-masonry.html" class="mn-sub-item"><span class="mn-sub-emoji">🏗️</span>Concrete &amp; Masonry</a>
     </div>
-    <a href="portafolio.html" class="mn-item">
+    <div class="mn-item mn-has-sub" onclick="mnToggleSub(this)">
       <div class="mn-item-left">
         <span class="mn-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
         <span class="mn-label">Our Work</span>
       </div>
       <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
-    </a>
+    </div>
+    <div class="mn-sub">
+      <a href="portafolio.html" class="mn-sub-item"><span class="mn-sub-emoji">🖼️</span>Portfolio &amp; Reviews</a>
+      <a href="proyectos.html" class="mn-sub-item"><span class="mn-sub-emoji">⭐</span>Featured Projects</a>
+    </div>
     <a href="blog.html" class="mn-item">
       <div class="mn-item-left">
         <span class="mn-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
@@ -125,13 +147,23 @@
       </div>
       <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
     </a>
-    <a href="index.html#areas" class="mn-item">
+    <div class="mn-item mn-has-sub" onclick="mnToggleSub(this)">
       <div class="mn-item-left">
         <span class="mn-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        <span class="mn-label">Service Areas</span>
+        <span class="mn-label">Areas</span>
       </div>
       <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
-    </a>
+    </div>
+    <div class="mn-sub">
+      <a href="areas/moreno-valley.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Moreno Valley</a>
+      <a href="areas/riverside.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Riverside</a>
+      <a href="areas/corona.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Corona</a>
+      <a href="areas/ontario.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Ontario</a>
+      <a href="areas/rancho-cucamonga.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Rancho Cucamonga</a>
+      <a href="areas/san-bernardino.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>San Bernardino</a>
+      <a href="areas/fontana.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Fontana</a>
+      <a href="areas/perris.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Perris</a>
+    </div>
   </div>
   <div class="mn-ctas">
     <a href="#" onclick="event.preventDefault();openContact()" class="mn-cta mn-cta-call"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (562) 394-6814</a>
@@ -147,15 +179,28 @@
   <div class="blog-hero-content" data-aos="fade-up">
     <div class="hero-badge-sm">Inland Empire Contractor</div>
     <h1>Construction<br/><span>Tips & Guides</span></h1>
-    <p>Honest advice, cost breakdowns, and local insights for homeowners in Riverside, Corona, Moreno Valley, and theLicensed Contractor | Inland Empire — from our 20+ years on the job.</p>
+    <p>Honest advice, cost breakdowns, and local insights for homeowners in Riverside, Corona, Moreno Valley, and the Inland Empire — from our 20+ years on the job.</p>
   </div>
 </section>
+
+<!-- SORO BLOG WIDGET -->
+<section style="padding:72px 20px 56px;background:#fff">
+  <div class="container">
+    <div data-aos="fade-up" style="margin-bottom:48px;text-align:center">
+      <div class="section-label">Published Regularly</div>
+      <h2 class="section-title" style="text-align:center">Latest <span>Articles</span></h2>
+      <p style="color:#666;font-family:'Inter',sans-serif;font-size:15px;margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto">Fresh tips, guides, and local insights for homeowners in the Inland Empire — updated automatically.</p>
+    </div>
+    <div id="soro-blog"></div>
+  </div>
+</section>
+<script src="https://app.trysoro.com/api/embed/4f6cd5ce-c2ec-4ed6-a516-7f4bd16b314f" defer></script>
 
 <section class="blog-grid-section">
   <div class="container">
     <div data-aos="fade-up" style="margin-bottom:48px">
-      <div class="section-label">Latest Articles</div>
-      <h2 class="section-title">Recent <span>Posts</span></h2>
+      <div class="section-label">In-Depth Guides</div>
+      <h2 class="section-title">Expert <span>Resources</span></h2>
     </div>
     <div class="blog-grid">
 
@@ -170,7 +215,7 @@
             <span>⏱ 7 min read</span>
           </div>
           <h2>Kitchen Remodel Cost in Riverside, CA: 2024 Complete Guide</h2>
-          <p>Wondering what a kitchen renovation actually costs in theLicensed Contractor | Inland Empire? We break down real price ranges — from a cosmetic refresh to a full custom remodel — so you can plan your budget with confidence.</p>
+          <p>Wondering what a kitchen renovation actually costs in the Inland Empire? We break down real price ranges — from a cosmetic refresh to a full custom remodel — so you can plan your budget with confidence.</p>
           <a href="blog/kitchen-remodel-cost-riverside-ca.html" class="blog-card-link">Read Article <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5"><polyline points="9,18 15,12 9,6"/></svg></a>
         </div>
       </article>
@@ -185,8 +230,8 @@
             <span>📅 May 2024</span>
             <span>⏱ 6 min read</span>
           </div>
-          <h2>Best Flooring forLicensed Contractor | Inland Empire Homes: A Southern California Guide</h2>
-          <p>Not all flooring holds up to theLicensed Contractor | Inland Empire's heat, dry air, and active families. We compare hardwood, tile, LVP, and carpet — and tell you what actually works best in Southern California homes.</p>
+          <h2>Best Flooring for Inland Empire Homes: A Southern California Guide</h2>
+          <p>Not all flooring holds up to the Inland Empire's heat, dry air, and active families. We compare hardwood, tile, LVP, and carpet — and tell you what actually works best in Southern California homes.</p>
           <a href="blog/best-flooring-options-inland-empire.html" class="blog-card-link">Read Article <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5"><polyline points="9,18 15,12 9,6"/></svg></a>
         </div>
       </article>
@@ -225,7 +270,7 @@
 
       <article class="blog-card" data-aos="fade-up" data-aos-delay="80">
         <div class="blog-card-img">
-          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Bathroom remodel costLicensed Contractor | Inland Empire" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Bathroom remodel cost Inland Empire" loading="lazy" />
           <span class="blog-card-cat">Bathroom</span>
         </div>
         <div class="blog-card-body">
@@ -233,8 +278,8 @@
             <span>📅 February 2024</span>
             <span>⏱ 7 min read</span>
           </div>
-          <h2>Bathroom Remodel Cost &amp; Ideas forLicensed Contractor | Inland Empire Homeowners (2024)</h2>
-          <p>A bathroom renovation can return 60–70% of its cost at resale in theLicensed Contractor | Inland Empire market. Discover real price ranges, the most popular upgrades in 2024, and how long the job actually takes — from planning to final cleanup.</p>
+          <h2>Bathroom Remodel Cost &amp; Ideas for Inland Empire Homeowners (2024)</h2>
+          <p>A bathroom renovation can return 60–70% of its cost at resale in the Inland Empire market. Discover real price ranges, the most popular upgrades in 2024, and how long the job actually takes — from planning to final cleanup.</p>
           <a href="blog/bathroom-remodel-cost-inland-empire.html" class="blog-card-link">Read Article <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5"><polyline points="9,18 15,12 9,6"/></svg></a>
         </div>
       </article>
@@ -290,7 +335,7 @@
       <h2 class="sr-title">What Our <span>Clients</span> Say</h2>
       <div class="sr-rating">
         <span class="sr-rating-num">5.0</span>
-        <div><div class="sr-stars">★★★★★</div><div class="sr-rating-sub">Based on Google Reviews ·Licensed Contractor | Inland Empire, CA</div></div>
+        <div><div class="sr-stars">★★★★★</div><div class="sr-rating-sub">Based on Google Reviews · Inland Empire, CA</div></div>
       </div>
     </div>
   </div>
@@ -333,7 +378,7 @@
 <section class="bottom-cta">
   <div class="cta-inner">
     <h2>Ready to Start Your<br/><span>Project?</span></h2>
-    <p>Free estimates · Licensed &amp; insured · Serving Riverside, Corona, Moreno Valley, Jurupa Valley, Fontana &amp; all of theLicensed Contractor | Inland Empire.</p>
+    <p>Free estimates · Licensed &amp; insured · Serving Riverside, Corona, Moreno Valley, Jurupa Valley, Fontana &amp; all of the Inland Empire.</p>
     <div class="cta-btns">
       <a href="#" onclick="event.preventDefault();openContact()" class="btn-white">Call (562) 394-6814</a>
       <a href="https://wa.me/19512836742?text=Hi!%20I%27d%20like%20a%20free%20estimate." class="btn-outline-white" target="_blank">WhatsApp Us</a>
