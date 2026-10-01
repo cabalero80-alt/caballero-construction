@@ -1560,9 +1560,14 @@
       line-height: 1;
       pointer-events: none;
       user-select: none;
+      z-index: 0;
     }
-    .mv-card--mission .mv-watermark { color: rgba(196,30,58,0.06); }
-    .mv-card--vision .mv-watermark { color: rgba(201,168,76,0.07); }
+    .mv-card--mission .mv-watermark { color: rgba(196,30,58,0.05); }
+    .mv-card--vision .mv-watermark { color: rgba(201,168,76,0.06); }
+    .mv-card-body {
+      position: relative;
+      z-index: 1;
+    }
     .mv-icon {
       width: 56px; height: 56px;
       border-radius: 50%;
@@ -2269,23 +2274,27 @@
       <!-- Mission -->
       <div class="mv-card mv-card--mission" data-aos="fade-right">
         <div class="mv-watermark">Mission</div>
-        <div class="mv-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+        <div class="mv-card-body">
+          <div class="mv-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <div class="mv-tag">Our Mission</div>
+          <h3>Redefining<br/>Excellence</h3>
+          <p>At Caballero Construction Inc, our mission is to redefine the standards of excellence in the home improvement industry. We are dedicated to delivering unparalleled value, craftsmanship, and satisfaction to every homeowner we serve. Our commitment is built on a foundation of professionalism, consistency, and integrity, ensuring that each project we undertake is executed with meticulous attention to detail and a personalized approach.</p>
         </div>
-        <div class="mv-tag">Our Mission</div>
-        <h3>Redefining<br/>Excellence</h3>
-        <p>At Caballero Construction Inc, our mission is to redefine the standards of excellence in the home improvement industry. We are dedicated to delivering unparalleled value, craftsmanship, and satisfaction to every homeowner we serve. Our commitment is built on a foundation of professionalism, consistency, and integrity, ensuring that each project we undertake is executed with meticulous attention to detail and a personalized approach.</p>
       </div>
 
       <!-- Vision -->
       <div class="mv-card mv-card--vision" data-aos="fade-left" data-aos-delay="100">
         <div class="mv-watermark">Vision</div>
-        <div class="mv-icon">
-          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <div class="mv-card-body">
+          <div class="mv-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="mv-tag">Our Vision</div>
+          <h3>Building Better<br/>Communities</h3>
+          <p>Our vision is to be the leading provider of home improvement and remodeling services, recognized for transforming the living spaces of our clients into havens of comfort, beauty, and functionality. We aim to build healthier, happier communities by enhancing the homes of our customers, fostering a culture of optimism, and connecting people through the power of transformation — through superior customer service, professionalism, and a relentless pursuit of excellence.</p>
         </div>
-        <div class="mv-tag">Our Vision</div>
-        <h3>Building Better<br/>Communities</h3>
-        <p>Our vision is to be the leading provider of home improvement and remodeling services, recognized for transforming the living spaces of our clients into havens of comfort, beauty, and functionality. We aim to build healthier, happier communities by enhancing the homes of our customers, fostering a culture of optimism, and connecting people through the power of transformation — through superior customer service, professionalism, and a relentless pursuit of excellence.</p>
       </div>
 
     </div>
