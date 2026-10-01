@@ -404,7 +404,7 @@
     // Build WhatsApp message
     var answers = ST.answers;
     var msg='Hola! Usé el estimador en su sitio web.\n\nServicio: '+svc.name+'\nEstimado: '+fmt(mn)+' – '+fmt(mx)+'\n\nMe gustaría recibir un estimado oficial. ¿Cuándo podría agendarme?';
-    var waUrl='https://wa.me/15623946813?text='+encodeURIComponent(msg);
+    var waUrl='https://wa.me/19512836742?text='+encodeURIComponent(msg);
 
     // Breakdown
     var rows='';
@@ -429,10 +429,10 @@
         '</div>'+
         '<div class="est-disclaimer">⚠️ Este es un estimado preliminar. El precio final puede variar según materiales específicos, accesibilidad, condición actual y alcance exacto del trabajo. Contáctanos para un estimado gratuito y exacto en tu hogar.</div>'+
         '<div class="est-cta-col">'+
-          '<a href="tel:5623946813" class="est-btn-call">'+
+          '<button onclick="window.closeEstimator();setTimeout(window.openContact,180)" class="est-btn-call">'+
             '<svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.5;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>'+
-            'Llamar Ahora · (562) 394-6813'+
-          '</a>'+
+            '📞  Llamar / Enviar Texto'+
+          '</button>'+
           '<a href="'+waUrl+'" target="_blank" class="est-btn-wa">'+
             '<svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:white;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg>'+
             'WhatsApp · Mensaje Pre-llenado'+
@@ -496,30 +496,46 @@
   var contactCSS = `
     #ctc-overlay{position:fixed;inset:0;z-index:10002;background:rgba(0,0,0,0.72);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.25s}
     #ctc-overlay.ctc-open{opacity:1;pointer-events:all}
-    #ctc-modal{background:white;border-radius:20px;width:100%;max-width:380px;overflow:hidden;transform:translateY(24px) scale(0.96);transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1);font-family:'Inter',sans-serif}
+    #ctc-modal{background:white;border-radius:20px;width:100%;max-width:400px;overflow:hidden;transform:translateY(24px) scale(0.96);transition:transform 0.32s cubic-bezier(0.34,1.56,0.64,1);font-family:'Inter',sans-serif}
     #ctc-overlay.ctc-open #ctc-modal{transform:translateY(0) scale(1)}
-    .ctc-head{background:#111;padding:22px 22px 18px;text-align:center;position:relative}
+    .ctc-head{background:#111;padding:20px 22px 16px;text-align:center;position:relative}
+    .ctc-head-badge{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.35);color:#C9A84C;font-family:'Oswald',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:4px 14px;border-radius:2px;margin-bottom:8px}
     .ctc-head-title{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:white;margin-bottom:2px}
-    .ctc-head-sub{font-size:12px;color:rgba(255,255,255,0.45)}
+    .ctc-head-sub{font-size:12px;color:rgba(255,255,255,0.4)}
     .ctc-x{position:absolute;top:14px;right:16px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:24px;cursor:pointer;line-height:1;padding:0;font-family:sans-serif}
     .ctc-x:hover{color:white}
-    .ctc-body{padding:22px}
-    .ctc-btn{display:flex;align-items:center;gap:14px;width:100%;padding:16px 20px;border-radius:12px;border:none;cursor:pointer;text-decoration:none;margin-bottom:10px;transition:all 0.2s}
+    .ctc-divider{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#bbb;text-align:center;padding:4px 0 10px;position:relative}
+    .ctc-divider::before,.ctc-divider::after{content:'';position:absolute;top:50%;width:calc(50% - 40px);height:1px;background:#e8e8e8}
+    .ctc-divider::before{left:0}.ctc-divider::after{right:0}
+    .ctc-body{padding:18px 22px 22px}
+    .ctc-btn{display:flex;align-items:center;gap:14px;width:100%;padding:14px 18px;border-radius:12px;border:none;cursor:pointer;text-decoration:none;margin-bottom:10px;transition:all 0.2s;box-sizing:border-box}
     .ctc-btn:last-child{margin-bottom:0}
     .ctc-btn-call{background:#C41E3A;color:white}
-    .ctc-btn-call:hover{background:#960018;transform:translateY(-1px)}
-    .ctc-btn-sms{background:#111;color:white}
-    .ctc-btn-sms:hover{background:#333;transform:translateY(-1px)}
+    .ctc-btn-call:hover{background:#960018;transform:translateY(-1px);box-shadow:0 6px 20px rgba(196,30,58,0.35)}
+    .ctc-btn-call2{background:#1a1a1a;color:white}
+    .ctc-btn-call2:hover{background:#333;transform:translateY(-1px)}
+    .ctc-btn-sms{background:#2563EB;color:white}
+    .ctc-btn-sms:hover{background:#1d4ed8;transform:translateY(-1px)}
     .ctc-btn-wa{background:#25D366;color:white}
     .ctc-btn-wa:hover{background:#1da851;transform:translateY(-1px)}
-    .ctc-btn-icon{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .ctc-btn-text{}
-    .ctc-btn-label{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;display:block;text-align:left}
-    .ctc-btn-desc{font-size:12px;opacity:0.7;display:block;text-align:left;margin-top:1px}
+    .ctc-btn-icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ctc-btn-label{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;display:block;text-align:left}
+    .ctc-btn-desc{font-size:11px;opacity:0.72;display:block;text-align:left;margin-top:1px}
   `;
   var cs2 = document.createElement('style');
   cs2.textContent = contactCSS;
   document.head.appendChild(cs2);
+
+  var PHONE_SVG = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>';
+  var SMS_SVG   = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>';
+  var WA_SVG    = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg>';
+
+  function ctcBtn(cls, href, target, icon, label, desc){
+    return '<a href="'+href+'"'+(target?' target="'+target+'"':'')+' class="ctc-btn '+cls+'">'+
+      '<div class="ctc-btn-icon">'+icon+'</div>'+
+      '<div><span class="ctc-btn-label">'+label+'</span><span class="ctc-btn-desc">'+desc+'</span></div>'+
+    '</a>';
+  }
 
   window.openContact = function(){
     if(!document.getElementById('ctc-overlay')){
@@ -528,23 +544,17 @@
       el.innerHTML=
         '<div id="ctc-modal">'+
           '<div class="ctc-head">'+
-            '<div class="ctc-head-title">Contáctanos</div>'+
-            '<div class="ctc-head-sub">Caballero Construction · (562) 394-6813</div>'+
+            '<div class="ctc-head-badge">Licensed Contractor</div>'+
+            '<div class="ctc-head-title">Contact Us</div>'+
+            '<div class="ctc-head-sub">Caballeros Construction · Moreno Valley, CA</div>'+
             '<button class="ctc-x" onclick="window.closeContact()">×</button>'+
           '</div>'+
           '<div class="ctc-body">'+
-            '<a href="tel:5623946813" class="ctc-btn ctc-btn-call">'+
-              '<div class="ctc-btn-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>'+
-              '<div class="ctc-btn-text"><span class="ctc-btn-label">Llamar ahora</span><span class="ctc-btn-desc">(562) 394-6813 · Respuesta inmediata</span></div>'+
-            '</a>'+
-            '<a href="sms:+15623946813&body=Hola%2C%20me%20gustar%C3%ADa%20un%20estimado%20gratuito." class="ctc-btn ctc-btn-sms">'+
-              '<div class="ctc-btn-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>'+
-              '<div class="ctc-btn-text"><span class="ctc-btn-label">Enviar mensaje de texto</span><span class="ctc-btn-desc">SMS · Te respondemos rápido</span></div>'+
-            '</a>'+
-            '<a href="https://wa.me/15623946813?text=Hola%2C%20me%20gustar%C3%ADa%20un%20estimado%20gratuito." target="_blank" class="ctc-btn ctc-btn-wa">'+
-              '<div class="ctc-btn-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg></div>'+
-              '<div class="ctc-btn-text"><span class="ctc-btn-label">WhatsApp</span><span class="ctc-btn-desc">Mensaje instantáneo · Fotos y detalles</span></div>'+
-            '</a>'+
+            ctcBtn('ctc-btn-call','tel:5623946814','',PHONE_SVG,'Call (562) 394-6814','Main line · Immediate response')+
+            ctcBtn('ctc-btn-call2','tel:9512836742','',PHONE_SVG,'Call (951) 283-6742','Secondary line · Also available')+
+            '<div class="ctc-divider">or send a message</div>'+
+            ctcBtn('ctc-btn-sms','sms:+19512836742&body=Hi!%20I%27d%20like%20a%20free%20estimate.','',SMS_SVG,'Text Us','SMS to (951) 283-6742 · Quick reply')+
+            ctcBtn('ctc-btn-wa','https://wa.me/19512836742?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballeros%20Construction.','_blank',WA_SVG,'WhatsApp','Instant message · Send photos')+
           '</div>'+
         '</div>';
       document.body.appendChild(el);

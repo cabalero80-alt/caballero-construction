@@ -142,8 +142,8 @@
     <div class="cb-header">
       <div class="cb-avatar"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
       <div class="cb-header-info">
-        <div class="cb-header-name">Caballero Construction</div>
-        <div class="cb-header-status"><span class="cb-status-dot"></span>Online — Riverside, CA</div>
+        <div class="cb-header-name">Caballeros Construction</div>
+        <div class="cb-header-status"><span class="cb-status-dot"></span>Online — Moreno Valley, CA</div>
       </div>
     </div>
     <div class="cb-messages" id="cb-messages"></div>
@@ -153,7 +153,7 @@
         <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
       </button>
     </div>
-    <div class="cb-footer">Caballero Construction Inc · (562) 394-6813</div>
+    <div class="cb-footer">Caballeros Construction · (562) 394-6814</div>
   </div>`;
   document.body.insertAdjacentHTML('beforeend', html);
 
@@ -164,13 +164,13 @@
     return '';
   })();
 
-  var PHONE = 'tel:5623946813';
-  var WA = 'https://wa.me/15623946813?text=Hi!%20I%27d%20like%20more%20information%20about%20Caballero%20Construction.';
+  var PHONE = '#';
+  var WA = 'https://wa.me/19512836742?text=Hi!%20I%27d%20like%20more%20information%20about%20Caballeros%20Construction.';
   var ESTIMATE = BASE + 'index.html#contact';
   var PORTFOLIO = BASE + 'portafolio.html';
 
   var ACTIONS = [
-    { type:'call', label:'Call (562) 394-6813', cls:'cb-action-call', href:PHONE, icon:'<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.8 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.7 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>' },
+    { type:'call', label:'Call or Text Us', cls:'cb-action-call', href:PHONE, onclick:'openContact', icon:'<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.8 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.7 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>' },
     { type:'wa',   label:'WhatsApp Us', cls:'cb-action-wa', href:WA, target:'_blank', icon:'<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>' },
     { type:'est',  label:'Calcular Estimado Gratis', cls:'cb-action-estimate', onclick:'openEstimator', icon:'<path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3"/><path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3z"/>' }
   ];
@@ -467,7 +467,7 @@
 
   /* ─── WELCOME ─────────────────────────────────────────── */
   function showWelcome(){
-    addBotRow('<div class="cb-bubble"><strong>Hi there! 👋</strong>I\'m the Caballero Construction assistant. I can answer questions about our services, pricing, and project timelines in Riverside &amp; the Inland Empire.<br><br>How can I help you today?</div>');
+    addBotRow('<div class="cb-bubble"><strong>Hi there! 👋</strong>I\'m the Caballeros Construction assistant. I can answer questions about our services, pricing, and project timelines in Riverside &amp; the Inland Empire.<br><br>How can I help you today?</div>');
     renderQuickReplies([
       {id:'services',label:'🔨 Services'},
       {id:'pricing',label:'💰 Pricing'},

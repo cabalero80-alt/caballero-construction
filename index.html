@@ -3,9 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caballero Construction Inc | Licensed & Insured | Inland Empire, CA</title>
-  <meta name="description" content="Licensed and insured general contractor serving Riverside, Corona, Moreno Valley, Jurupa Valley & Fontana. Kitchen remodeling, bathroom remodeling, drywall, flooring, roofing and more." />
-  <meta name="keywords" content="general contractor Riverside, kitchen remodeling Riverside, bathroom remodeling Riverside, handyman Riverside, contractor Inland Empire, Caballero Construction" />
+  <title>Caballeros Construction Inc | Licensed Contractor | Inland Empire|Licensed Contractor | Inland Empire, CA</title>
+  <meta name="description" content="Licensed general contractor serving Riverside, Corona, Moreno Valley, Jurupa Valley & Fontana. Kitchen remodeling, bathroom remodeling, drywall, flooring, roofing and more." />
+  <meta name="keywords" content="general contractor Riverside, kitchen remodeling Riverside, bathroom remodeling Riverside, licensed contractor Riverside, contractorLicensed Contractor | Inland Empire, Caballeros Construction" />
+  <link rel="canonical" href="https://caballeroconstructioninc.com/" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Caballeros Construction Inc",
+    "image": "https://caballeroconstructioninc.com/images/logo.png",
+    "url": "https://caballeroconstructioninc.com/",
+    "telephone": ["+15623946814", "+19512836742"],
+    "email": "caballeroconstruction35@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "25860 Thundercloud Ct",
+      "addressLocality": "Moreno Valley",
+      "addressRegion": "CA",
+      "postalCode": "92553",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.9425,
+      "longitude": -117.2297
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "15:00"
+      }
+    ],
+    "areaServed": [
+      {"@type": "City", "name": "Riverside", "addressRegion": "CA"},
+      {"@type": "City", "name": "Moreno Valley", "addressRegion": "CA"},
+      {"@type": "City", "name": "Corona", "addressRegion": "CA"},
+      {"@type": "City", "name": "Jurupa Valley", "addressRegion": "CA"},
+      {"@type": "City", "name": "Fontana", "addressRegion": "CA"},
+      {"@type": "City", "name": "Ontario", "addressRegion": "CA"},
+      {"@type": "City", "name": "Rancho Cucamonga", "addressRegion": "CA"},
+      {"@type": "City", "name": "San Bernardino", "addressRegion": "CA"}
+    ],
+    "priceRange": "$$",
+    "description": "Licensed general contractor serving the Inland Empire. Specializing in kitchen remodeling, bathroom remodeling, roofing, flooring, drywall, painting, plumbing, electrical, and concrete work.",
+    "sameAs": [
+      "https://www.facebook.com/caballeroshome"
+    ]
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1044,7 +1100,9 @@
       letter-spacing: 0.5px;
       color: var(--black);
       transition: all 0.3s ease;
-      cursor: default;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
     }
 
     .area-tag:hover {
@@ -1337,7 +1395,7 @@
 <!-- NAVBAR -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <img src="images/logo-new.png" alt="Caballero Construction Inc" />
+    <img src="images/logo-new.png" alt="Caballeros Construction Inc" />
   </a>
   <ul class="nav-links" id="navLinks">
     <li class="nav-dropdown">
@@ -1357,7 +1415,19 @@
     </li>
     <li><a href="portafolio.html">Our Work</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="#areas">Areas</a></li>
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)">Areas <svg class="dropdown-arrow" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></a>
+      <div class="dropdown-menu">
+        <a href="areas/riverside.html">Riverside</a>
+        <a href="areas/moreno-valley.html">Moreno Valley</a>
+        <a href="areas/corona.html">Corona</a>
+        <a href="areas/jurupa-valley.html">Jurupa Valley</a>
+        <a href="areas/fontana.html">Fontana</a>
+        <a href="areas/ontario.html">Ontario</a>
+        <a href="areas/rancho-cucamonga.html">Rancho Cucamonga</a>
+        <a href="areas/san-bernardino.html">San Bernardino</a>
+      </div>
+    </li>
     <li><a href="#contact" class="nav-cta" onclick="event.preventDefault();openEstimator()">Free Estimate</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -1369,7 +1439,7 @@
 <div id="mn-overlay" onclick="toggleMenu()"></div>
 <div id="mn-drawer">
   <div class="mn-head">
-    <a href="#"><img src="images/logo-new.png" alt="Caballero Construction" class="mn-logo"></a>
+    <a href="#"><img src="images/logo-new.png" alt="Caballeros Construction" class="mn-logo"></a>
     <button class="mn-close" onclick="toggleMenu()" aria-label="Close menu"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2.5" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
   <div class="mn-nav">
@@ -1406,20 +1476,30 @@
       </div>
       <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
     </a>
-    <a href="#areas" class="mn-item">
+    <div class="mn-item mn-has-sub" onclick="mnToggleSub(this)">
       <div class="mn-item-left">
         <span class="mn-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <span class="mn-label">Service Areas</span>
       </div>
       <svg class="mn-chevron" viewBox="0 0 24 24"><polyline points="9,18 15,12 9,6"/></svg>
-    </a>
+    </div>
+    <div class="mn-sub">
+      <a href="areas/riverside.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Riverside</a>
+      <a href="areas/moreno-valley.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Moreno Valley</a>
+      <a href="areas/corona.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Corona</a>
+      <a href="areas/jurupa-valley.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Jurupa Valley</a>
+      <a href="areas/fontana.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Fontana</a>
+      <a href="areas/ontario.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Ontario</a>
+      <a href="areas/rancho-cucamonga.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>Rancho Cucamonga</a>
+      <a href="areas/san-bernardino.html" class="mn-sub-item"><span class="mn-sub-emoji">📍</span>San Bernardino</a>
+    </div>
   </div>
   <div class="mn-ctas">
-    <a href="tel:5623946813" class="mn-cta mn-cta-call"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (562) 394-6813</a>
-    <a href="https://wa.me/15623946813?text=Hi!%20I%27d%20like%20more%20info%20about%20Caballero%20Construction." target="_blank" class="mn-cta mn-cta-wa"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg>WhatsApp</a>
+    <a href="#" onclick="event.preventDefault();openContact()" class="mn-cta mn-cta-call"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call (562) 394-6814</a>
+    <a href="https://wa.me/19512836742?text=Hi!%20I%27d%20like%20more%20info%20about%20Caballero%20Construction." target="_blank" class="mn-cta mn-cta-wa"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg>WhatsApp</a>
     <button onclick="if(typeof openEstimator!=='undefined')openEstimator()" class="mn-cta mn-cta-est"><svg viewBox="0 0 24 24" stroke="#C9A84C" fill="none" stroke-width="2.5"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3"/><path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3z"/></svg>Cotización Gratis</button>
   </div>
-  <div class="mn-footer-note">Licensed &amp; Insured · Riverside, CA</div>
+  <div class="mn-footer-note">Licensed Contractor · Moreno Valley, CA</div>
 </div>
 
 <section id="hero">
@@ -1433,14 +1513,14 @@
   <div class="hero-slide"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">Licensed &amp; Insured · Inland Empire, CA</div>
+    <div class="hero-badge">Licensed General Contractor ·Licensed Contractor | Inland Empire, CA</div>
     <h1 class="hero-title">
       <span class="static">Building Your</span>
       <span class="rotating-wrap"><span id="typewriter"></span><span class="tw-cursor">|</span></span>
       <span class="static">Since 2004</span>
     </h1>
     <p class="hero-subtitle">
-      Full-service general contractor serving Riverside, Corona, Moreno Valley &amp; the Inland Empire. Quality craftsmanship, transparent pricing, guaranteed results.
+      Full-service general contractor serving Riverside, Corona, Moreno Valley &amp; theLicensed Contractor | Inland Empire. Quality craftsmanship, transparent pricing, guaranteed results.
     </p>
     <div class="hero-ctas">
       <button onclick="openContact()" class="btn-primary" style="border:none;cursor:pointer;font-size:inherit;font-family:inherit">
@@ -1468,7 +1548,7 @@
       </div>
       <div class="trust-text">
         <strong>Licensed & Insured</strong>
-        <span>State of California Certified</span>
+        <span>CA Contractor License</span>
       </div>
     </div>
     <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
@@ -1856,7 +1936,7 @@
       <div class="why-content" data-aos="fade-right">
         <div class="section-label">Why Caballero?</div>
         <h2 class="section-title">The <span>Standard</span><br/>We Set</h2>
-        <p class="section-subtitle">We've built our reputation one project at a time. Here's what makes us different from every other contractor in the Inland Empire.</p>
+        <p class="section-subtitle">We've built our reputation one project at a time. Here's what makes us different from every other contractor in theLicensed Contractor | Inland Empire.</p>
         <div class="why-points">
           <div class="why-point">
             <div class="why-check"><svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg></div>
@@ -1907,7 +1987,7 @@
         <div class="rating-number">5.0</div>
         <div>
           <div class="rating-stars">★★★★★</div>
-          <div class="rating-count">Based on Google Reviews · Inland Empire, CA</div>
+          <div class="rating-count">Based on Google Reviews ·Licensed Contractor | Inland Empire, CA</div>
         </div>
       </div>
     </div>
@@ -1920,7 +2000,7 @@
       <div class="review-card">
         <div class="review-quote">"</div>
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Caballero Construction handyman did an installation in my business of exit signs, required by the fire department, and they were great and passed the inspection. Also he installed TVs in my lobby and they look great!"</p>
+        <p class="review-text">"Caballeros Construction handyman did an installation in my business of exit signs, required by the fire department, and they were great and passed the inspection. Also he installed TVs in my lobby and they look great!"</p>
         <div class="review-author">
           <div class="review-avatar" style="background:linear-gradient(135deg,#C41E3A,#960018)">A</div>
           <div>
@@ -2090,7 +2170,7 @@
       <div class="review-card">
         <div class="review-quote">"</div>
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Caballero Construction handyman did an installation in my business of exit signs, required by the fire department, and they were great and passed the inspection. Also he installed TVs in my lobby and they look great!"</p>
+        <p class="review-text">"Caballeros Construction handyman did an installation in my business of exit signs, required by the fire department, and they were great and passed the inspection. Also he installed TVs in my lobby and they look great!"</p>
         <div class="review-author">
           <div class="review-avatar" style="background:linear-gradient(135deg,#C41E3A,#960018)">A</div>
           <div>
@@ -2191,25 +2271,25 @@
     <div data-aos="fade-right">
       <div class="section-label">Where We Work</div>
       <h2 class="section-title">Serving the <span>Inland Empire</span></h2>
-      <p class="section-subtitle">Based in Riverside, CA — we serve homeowners and businesses across the Inland Empire with the same level of quality and commitment.</p>
+      <p class="section-subtitle">Based in Moreno Valley, CA — we serve homeowners and businesses across theLicensed Contractor | Inland Empire with the same level of quality and commitment.</p>
       <div class="areas-list">
-        <div class="area-tag">Riverside</div>
-        <div class="area-tag">Jurupa Valley</div>
-        <div class="area-tag">Corona</div>
-        <div class="area-tag">Moreno Valley</div>
-        <div class="area-tag">Fontana</div>
-        <div class="area-tag">Ontario</div>
-        <div class="area-tag">Rancho Cucamonga</div>
-        <div class="area-tag">San Bernardino</div>
+        <a href="areas/riverside.html" class="area-tag">Riverside</a>
+        <a href="areas/jurupa-valley.html" class="area-tag">Jurupa Valley</a>
+        <a href="areas/corona.html" class="area-tag">Corona</a>
+        <a href="areas/moreno-valley.html" class="area-tag">Moreno Valley</a>
+        <a href="areas/fontana.html" class="area-tag">Fontana</a>
+        <a href="areas/ontario.html" class="area-tag">Ontario</a>
+        <a href="areas/rancho-cucamonga.html" class="area-tag">Rancho Cucamonga</a>
+        <a href="areas/san-bernardino.html" class="area-tag">San Bernardino</a>
       </div>
     </div>
     <div class="areas-map" data-aos="fade-left">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211784.5073944836!2d-117.59844!3d33.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcb0b5f442f975%3A0xef0dcfc6863fe29!2sCaballeros%20Handyman%20Services!5e0!3m2!1sen!2sus!4v1700000000000"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211784.5073944836!2d-117.59844!3d33.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcb0b5f442f975%3A0xef0dcfc6863fe29!2sCaballeros%20Construction!5e0!3m2!1sen!2sus!4v1700000000000"
         allowfullscreen
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Caballero Construction location">
+        title="Caballeros Construction location">
       </iframe>
     </div>
   </div>
@@ -2222,15 +2302,15 @@
       <h2 class="cta-title">Ready to Start<br/><span>Your Project?</span></h2>
       <p class="cta-sub">Get a free, no-obligation estimate. We respond fast — usually same day.</p>
       <div class="cta-actions">
-        <a href="tel:5623946813" class="btn-white">
-          📞 Call (562) 394-6813
+        <a href="#" onclick="event.preventDefault();openContact()" class="btn-white">
+          📞 Call (562) 394-6814
         </a>
-        <a href="https://wa.me/15623946813?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballero%20Construction." class="btn-outline-white" target="_blank">
+        <a href="https://wa.me/19512836742?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballero%20Construction." class="btn-outline-white" target="_blank">
           💬 WhatsApp Us
         </a>
       </div>
       <p style="margin-top:28px;font-size:14px;color:rgba(255,255,255,0.6)">
-        📧 cabalero80@gmail.com &nbsp;·&nbsp; 📍 Riverside, CA 92509 &nbsp;·&nbsp; Mon–Sat 8AM–5PM
+        📧 caballeroconstruction35.com &nbsp;·&nbsp; 📍 Moreno Valley, CA 92553 &nbsp;·&nbsp; Mon–Sat 8AM–5PM
       </p>
     </div>
   </div>
@@ -2240,16 +2320,16 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-new.png" alt="Caballero Construction Inc" />
-      <p>Licensed and insured general contractor serving the Inland Empire since 2004. Quality work, honest pricing, guaranteed satisfaction.</p>
+      <img src="images/logo-new.png" alt="Caballeros Construction Inc" />
+      <p>Licensed general contractor serving theLicensed Contractor | Inland Empire since 2004. Quality work, honest pricing, guaranteed satisfaction.</p>
       <div class="footer-contact">
-        <a href="tel:5623946813">
+        <a href="#" onclick="event.preventDefault();openContact()">
           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.8 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.7 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-          (562) 394-6813
+          (562) 394-6814
         </a>
-        <a href="mailto:cabalero80@gmail.com">
+        <a href="mailto:caballeroconstruction35.com">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          cabalero80@gmail.com
+          caballeroconstruction35.com
         </a>
       </div>
     </div>
@@ -2294,8 +2374,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2024 Caballero Construction Inc · Riverside, CA · All Rights Reserved</span>
-    <span>Licensed &amp; Insured · Serving Inland Empire Since 2004</span>
+    <span>© 2024 Caballeros Construction Inc · All Rights Reserved</span>
+    <span>Licensed &amp; Insured · ServingLicensed Contractor | Inland Empire Since 2004</span>
   </div>
 </footer>
 
