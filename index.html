@@ -1388,6 +1388,110 @@
 .hamburger.mn-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:640px){.nav-links{display:none!important}}
 @media(min-width:641px){#mn-overlay,#mn-drawer{display:none!important}}
+
+    /* ── ABOUT ─────────────────────────────────────────── */
+    #about { background: #fff; padding: 110px 20px; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-paragraphs { margin-top: 32px; display: flex; flex-direction: column; gap: 0; }
+    .about-paragraphs p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: #555;
+      padding: 24px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .about-paragraphs p:first-child { padding-top: 0; }
+    .about-paragraphs p:last-child { border-bottom: none; }
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 15px 34px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .about-cta:hover { background: var(--red-dark); transform: translateY(-2px); }
+    .about-cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* Trust card */
+    .about-trust-card {
+      background: var(--black);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-trust-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+    .about-trust-card::after {
+      content: '"';
+      position: absolute;
+      bottom: -20px; right: 24px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 200px;
+      color: rgba(201,168,76,0.05);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .trust-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .trust-stat {
+      padding: 28px 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .trust-stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .trust-stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+    .about-trust-tagline {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      text-align: center;
+    }
+    .about-trust-tagline strong { color: var(--gold); display: block; font-family: 'Oswald', sans-serif; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+
+    @media (max-width: 960px) {
+      .about-grid { grid-template-columns: 1fr; gap: 56px; }
+    }
   </style>
 </head>
 <body>
@@ -1973,6 +2077,58 @@
         <img src="images/project-2.jpg" alt="Bathroom vanity" />
         <img src="images/project-16.jpg" alt="Drywall work" />
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Text column -->
+      <div data-aos="fade-right">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Your Home,<br/><span>Our Commitment</span></h2>
+        <div class="about-paragraphs">
+          <p>At Caballero Construction Inc, we understand that your home is more than just a place to live — it's a reflection of your personal style, a repository of memories, and most importantly, a sanctuary for you and your loved ones. That's why our team of seasoned professionals approaches every job, big or small, with the utmost care and dedication.</p>
+          <p>Choosing Caballero Construction Inc means entrusting your home to a company that has stood the test of time. Our 20 years of experience have not only honed our skills but also deepened our understanding of what homeowners need — reliability, quality, and transparent service. Our insured status further cements our commitment to providing you with services that not only meet but exceed your expectations.</p>
+          <p>Let us take the hassle out of home repairs and improvements, so you can enjoy the comfort and beauty of your space without worry. With us, your home is in capable and caring hands.</p>
+        </div>
+        <button class="about-cta" onclick="openEstimator()">
+          Get a Free Estimate
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+        </button>
+      </div>
+
+      <!-- Trust card column -->
+      <div data-aos="fade-left" data-aos-delay="100">
+        <div class="about-trust-card">
+          <div class="trust-stat-grid">
+            <div class="trust-stat">
+              <div class="trust-stat-num">20+</div>
+              <div class="trust-stat-label">Years of Experience</div>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-stat-num">500+</div>
+              <div class="trust-stat-label">Projects Completed</div>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-stat-num">4.6★</div>
+              <div class="trust-stat-label">Google Rating</div>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-stat-num">100%</div>
+              <div class="trust-stat-label">Licensed &amp; Insured</div>
+            </div>
+          </div>
+          <div class="about-trust-tagline">
+            <strong>Caballeros Construction Inc</strong>
+            Serving the Inland Empire with pride since 2004 — Moreno Valley, CA
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
