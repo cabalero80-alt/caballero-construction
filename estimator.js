@@ -520,11 +520,7 @@
     .ctc-btn-wa:hover{background:#1da851;transform:translateY(-1px)}
     .ctc-btn-wa2{background:#128C7E;color:white}
     .ctc-btn-wa2:hover{background:#0a6b5e;transform:translateY(-1px)}
-    #wa-float{position:fixed;bottom:90px;right:22px;z-index:9990;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-    #wa-float a{display:flex;align-items:center;gap:8px;background:#25D366;color:white;border-radius:50px;padding:10px 16px 10px 12px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,0.45);transition:all 0.22s;white-space:nowrap}
-    #wa-float a:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,0.55)}
-    #wa-float svg{flex-shrink:0}
-    .ctc-btn-icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ctc-btn-icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .ctc-btn-label{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;display:block;text-align:left}
     .ctc-btn-desc{font-size:11px;opacity:0.72;display:block;text-align:left;margin-top:1px}
   `;
@@ -579,21 +575,5 @@
     document.body.style.overflow='';
   };
 
-  /* ─── FLOATING WHATSAPP BUTTONS ──────────────────────────── */
-  var WA_FLOAT_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg>';
-
-  document.addEventListener('DOMContentLoaded', function(){
-    if(document.getElementById('wa-float')) return;
-    var wrap = document.createElement('div');
-    wrap.id = 'wa-float';
-    wrap.innerHTML =
-      '<a href="https://wa.me/15623946813?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballeros%20Construction." target="_blank" aria-label="WhatsApp (562) 394-6813">' +
-        WA_FLOAT_SVG + '<span>(562) 394-6813</span>' +
-      '</a>' +
-      '<a href="https://wa.me/19512836741?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballeros%20Construction." target="_blank" aria-label="WhatsApp (951) 283-6741" style="background:#128C7E;box-shadow:0 4px 16px rgba(18,140,126,0.45)">' +
-        WA_FLOAT_SVG + '<span>(951) 283-6741</span>' +
-      '</a>';
-    document.body.appendChild(wrap);
-  });
 
 })();
