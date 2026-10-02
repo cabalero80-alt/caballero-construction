@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/images/logo-new.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <title>Contractor in Riverside CA | Caballeros Construction Inc</title>
   <meta name="description" content="Top-rated general contractor in Riverside, CA. Caballeros Construction offers kitchen remodeling, bathroom remodeling, roofing, flooring & more. Licensed & insured. Free estimate." />
   <meta name="keywords" content="contractor Riverside CA, general contractor Riverside, kitchen remodeling Riverside, bathroom remodeling Riverside, roofing Riverside CA, licensed contractor Riverside" />
@@ -58,8 +58,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="../service-style.css" />
   <style>
     #mn-overlay{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.65);opacity:0;pointer-events:none;transition:opacity 0.3s}
@@ -470,9 +471,9 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="../estimator.js"></script>
-<script src="../chatbot.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="../estimator.js" defer></script>
+<script src="../chatbot.js" defer></script>
 <script>
   AOS.init({ duration: 700, once: true, offset: 60 });
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/images/logo-new.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <title>Construction Tips & Guides | Caballeros Construction</title>
   <meta name="description" content="Helpful guides, cost estimates, and tips for homeowners in Riverside, Corona, Moreno Valley & the Inland Empire from Caballeros Construction — 20+ years of experience." />
   <meta name="keywords" content="contractor blog Riverside CA, home remodeling tips Inland Empire, kitchen remodel cost Riverside, bathroom renovation guide Corona CA" />
@@ -16,8 +16,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Caballeros Construction Inc" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="blog-style.css" />
 <style>
 /* ── MOBILE DRAWER ─────────────────────────────────────── */
@@ -420,7 +421,7 @@
   <div class="footer-bottom">© 2024 Caballeros Construction Inc · Licensed Contractor</div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init({duration:700,once:true,offset:80});
   var navbar=document.getElementById('navbar');
@@ -438,7 +439,7 @@
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.nav-dropdown'))document.querySelectorAll('.nav-dropdown').forEach(function(d){d.classList.remove('open')});});
 </script>
-<script src="estimator.js"></script>
-<script src="chatbot.js"></script>
+<script src="estimator.js" defer></script>
+<script src="chatbot.js" defer></script>
 </body>
 </html>

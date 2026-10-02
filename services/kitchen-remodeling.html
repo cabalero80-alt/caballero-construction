@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/images/logo-new.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link rel="canonical" href="https://caballeroconstructioninc.com/services/kitchen-remodeling.html" />
   <meta property="og:title" content="Kitchen Remodeling Riverside CA | Caballeros Construction" />
   <meta property="og:description" content="Professional kitchen remodeling in Riverside, Corona, Moreno Valley and the Inland Empire. Cabinets, countertops, islands and more. Free estimates." />
@@ -17,8 +17,9 @@
   <meta name="description" content="Professional kitchen remodeling in Riverside, Corona, Moreno Valley and the Inland Empire. Cabinets, countertops, islands, flooring and more. Free estimates." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="../service-style.css" />
 <style>
 /* ── MOBILE DRAWER ─────────────────────────────────────── */
@@ -371,9 +372,9 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>AOS.init({duration:700,once:true,offset:80});const navbar=document.getElementById("navbar");window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>60));function toggleMenu(){var d=document.getElementById('mn-drawer'),o=document.getElementById('mn-overlay'),h=document.querySelector('.hamburger'),op=d.classList.contains('mn-open');d.classList.toggle('mn-open',!op);o.classList.toggle('mn-open',!op);if(h)h.classList.toggle('mn-open',!op);document.body.style.overflow=op?'':'hidden';}function mnToggleSub(el){el.classList.toggle('mn-sub-open');var s=el.nextElementSibling;if(s)s.classList.toggle('mn-sub-open');}document.querySelectorAll("#navLinks a").forEach(function(a){a.addEventListener("click",function(){var isDropdownTrigger=this.parentElement.classList.contains("nav-dropdown");if(!isDropdownTrigger){document.getElementById("navLinks").classList.remove("open");document.querySelectorAll(".nav-dropdown").forEach(d=>d.classList.remove("open"));}});});document.querySelectorAll(".nav-dropdown > a").forEach(function(link){link.addEventListener("click",function(e){e.preventDefault();this.parentElement.classList.toggle("open");});});document.addEventListener("click",function(e){if(!e.target.closest(".nav-dropdown"))document.querySelectorAll(".nav-dropdown").forEach(function(d){d.classList.remove("open");});});</script>
-<script src="../estimator.js"></script>
-<script src="../chatbot.js"></script>
+<script src="../estimator.js" defer></script>
+<script src="../chatbot.js" defer></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/images/logo-new.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <title>Contractor in Rancho Cucamonga CA | Caballeros Construction Inc</title>
   <meta name="description" content="Top-rated general contractor in Rancho Cucamonga, CA. Caballeros Construction offers kitchen remodeling, bathroom remodeling, roofing, flooring & more. Licensed & insured. Free estimate." />
   <meta name="keywords" content="contractor Rancho Cucamonga CA, general contractor Rancho Cucamonga, kitchen remodeling Rancho Cucamonga, bathroom remodeling Rancho Cucamonga, roofing Rancho Cucamonga CA, licensed contractor Rancho Cucamonga" />
@@ -47,8 +47,9 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="../service-style.css" />
   <style>
     #mn-overlay{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.65);opacity:0;pointer-events:none;transition:opacity 0.3s}
@@ -298,9 +299,9 @@
   <div style="max-width:1180px;margin:24px auto 0;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.25);flex-wrap:wrap;gap:8px;"><span>&copy; 2024 Caballeros Construction Inc. All rights reserved.</span><span>Licensed General Contractor · Moreno Valley, CA 92553</span></div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="../estimator.js"></script>
-<script src="../chatbot.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="../estimator.js" defer></script>
+<script src="../chatbot.js" defer></script>
 <script>
   AOS.init({duration:700,once:true,offset:60});
   window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});

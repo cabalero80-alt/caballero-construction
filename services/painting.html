@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/images/logo-new.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link rel="canonical" href="https://caballeroconstructioninc.com/services/painting.html" />
   <meta property="og:title" content="Painting Contractor Riverside CA | Caballeros Construction" />
   <meta property="og:description" content="Interior and exterior painting in Riverside and the Inland Empire. Professional finish, licensed and insured. Free estimates." />
@@ -14,8 +14,8 @@
   <meta property="og:site_name" content="Caballeros Construction Inc" />
   <title>Painting Contractor Riverside CA | Caballeros Const.</title>
   <meta name="description" content="Professional interior and exterior painting in Riverside and Inland Empire CA. Premium paints, clean work, expert finish. Free estimates." />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="../service-style.css" />
 <style>
 /* ── MOBILE DRAWER ─────────────────────────────────────── */
@@ -335,8 +335,8 @@
   </div>
 </section>
 <footer class="svc-footer"><div class="footer-inner"><img src="../images/logo-new.png" alt="Caballeros Construction Inc" /><p>© 2024 Caballeros Construction Inc · Licensed Contractor</p><a href="../index.html">← Back to Home</a></div></footer>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>AOS.init({duration:700,once:true,offset:80});const navbar=document.getElementById("navbar");window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>60));function toggleMenu(){var d=document.getElementById('mn-drawer'),o=document.getElementById('mn-overlay'),h=document.querySelector('.hamburger'),op=d.classList.contains('mn-open');d.classList.toggle('mn-open',!op);o.classList.toggle('mn-open',!op);if(h)h.classList.toggle('mn-open',!op);document.body.style.overflow=op?'':'hidden';}function mnToggleSub(el){el.classList.toggle('mn-sub-open');var s=el.nextElementSibling;if(s)s.classList.toggle('mn-sub-open');}document.querySelectorAll("#navLinks a").forEach(function(a){a.addEventListener("click",function(){var isDropdownTrigger=this.parentElement.classList.contains("nav-dropdown");if(!isDropdownTrigger){document.getElementById("navLinks").classList.remove("open");document.querySelectorAll(".nav-dropdown").forEach(d=>d.classList.remove("open"));}});});document.querySelectorAll(".nav-dropdown > a").forEach(function(link){link.addEventListener("click",function(e){e.preventDefault();this.parentElement.classList.toggle("open");});});document.addEventListener("click",function(e){if(!e.target.closest(".nav-dropdown"))document.querySelectorAll(".nav-dropdown").forEach(function(d){d.classList.remove("open");});});</script>
-<script src="../estimator.js"></script>
-<script src="../chatbot.js"></script>
+<script src="../estimator.js" defer></script>
+<script src="../chatbot.js" defer></script>
 </body></html>
