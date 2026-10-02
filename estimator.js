@@ -550,7 +550,7 @@
             '<button class="ctc-x" onclick="window.closeContact()">×</button>'+
           '</div>'+
           '<div class="ctc-body">'+
-            ctcBtn('ctc-btn-call','tel:5623946814','',PHONE_SVG,'Call (562) 394-6814','Main line · Immediate response')+
+            ctcBtn('ctc-btn-call','tel:5623946813','',PHONE_SVG,'Call (562) 394-6813','Main line · Immediate response')+
             ctcBtn('ctc-btn-call2','tel:9512836742','',PHONE_SVG,'Call (951) 283-6742','Secondary line · Also available')+
             '<div class="ctc-divider">or send a message</div>'+
             ctcBtn('ctc-btn-sms','sms:+19512836742&body=Hi!%20I%27d%20like%20a%20free%20estimate.','',SMS_SVG,'Text Us','SMS to (951) 283-6742 · Quick reply')+
