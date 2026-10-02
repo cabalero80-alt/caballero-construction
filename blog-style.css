@@ -32,8 +32,9 @@ h1,h2,h3,h4,h5{font-family:'Oswald',sans-serif}
 .dropdown-menu a::after{display:none!important}
 
 /* HERO - BLOG INDEX */
-.blog-hero{min-height:52vh;display:flex;align-items:center;background:var(--black);position:relative;overflow:hidden}
-.blog-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,0.02) 40px,rgba(201,168,76,0.02) 80px)}
+.blog-hero{min-height:52vh;display:flex;align-items:center;background:var(--black);position:relative;overflow:hidden;background-image:url('/images/hero-2.jpg');background-size:cover;background-position:center}
+.blog-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.82) 0%,rgba(17,17,17,0.72) 60%,rgba(196,30,58,0.18) 100%)}
+.blog-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,0.025) 40px,rgba(201,168,76,0.025) 80px)}
 .blog-hero-stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--red)}
 .blog-hero-content{position:relative;z-index:2;padding:120px 40px 60px;max-width:900px}
 .hero-badge-sm{display:inline-block;background:var(--red);color:white;font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;margin-bottom:20px}
