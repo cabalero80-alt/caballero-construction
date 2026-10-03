@@ -518,8 +518,8 @@
     .ctc-btn-sms:hover{background:#1d4ed8;transform:translateY(-1px)}
     .ctc-btn-wa{background:#25D366;color:white}
     .ctc-btn-wa:hover{background:#1da851;transform:translateY(-1px)}
-    .ctc-btn-wa2{background:#128C7E;color:white}
-    .ctc-btn-wa2:hover{background:#0a6b5e;transform:translateY(-1px)}
+    .ctc-btn-email{background:#4285F4;color:white}
+    .ctc-btn-email:hover{background:#2b6dd9;transform:translateY(-1px)}
 .ctc-btn-icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .ctc-btn-label{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;display:block;text-align:left}
     .ctc-btn-desc{font-size:11px;opacity:0.72;display:block;text-align:left;margin-top:1px}
@@ -531,6 +531,7 @@
   var PHONE_SVG = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.22 1.16 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>';
   var SMS_SVG   = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>';
   var WA_SVG    = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.122 1.526 5.855L.057 23.944l6.265-1.644A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.006-1.372l-.358-.214-3.717.975.99-3.617-.234-.372A9.8 9.8 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182 17.427 2.182 21.818 6.573 21.818 12c0 5.427-4.39 9.818-9.818 9.818z"/></svg>';
+  var EMAIL_SVG = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:white;fill:none;stroke-width:2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
 
   function ctcBtn(cls, href, target, icon, label, desc){
     return '<a href="'+href+'"'+(target?' target="'+target+'"':'')+' class="ctc-btn '+cls+'">'+
@@ -553,11 +554,10 @@
           '</div>'+
           '<div class="ctc-body">'+
             ctcBtn('ctc-btn-call','tel:5623946813','',PHONE_SVG,'Call (562) 394-6813','Main line · Immediate response')+
-            ctcBtn('ctc-btn-call2','tel:9512836741','',PHONE_SVG,'Call (951) 283-6741','Secondary line · Also available')+
-            '<div class="ctc-divider">or send a message</div>'+
-            ctcBtn('ctc-btn-sms','sms:+19512836741&body=Hi!%20I%27d%20like%20a%20free%20estimate.','',SMS_SVG,'Text Us','SMS to (951) 283-6741 · Quick reply')+
-            ctcBtn('ctc-btn-wa','https://wa.me/15623946813?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballeros%20Construction.','_blank',WA_SVG,'WhatsApp (562) 394-6813','Main line WhatsApp · Send photos')+
-            ctcBtn('ctc-btn-wa2','https://wa.me/19512836741?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballeros%20Construction.','_blank',WA_SVG,'WhatsApp (951) 283-6741','Secondary line WhatsApp')+
+            '<div class="ctc-divider">send a message</div>'+
+            ctcBtn('ctc-btn-wa','https://wa.me/15623946813?text=Hi!%20I%27d%20like%20a%20free%20estimate%20from%20Caballeros%20Construction.','_blank',WA_SVG,'WhatsApp (562) 394-6813','Send photos &amp; get quick reply')+
+            ctcBtn('ctc-btn-sms','sms:+15623946813&body=Hi!%20I%27d%20like%20a%20free%20estimate.','',SMS_SVG,'Text Us','SMS to (562) 394-6813 · Quick reply')+
+            ctcBtn('ctc-btn-email','mailto:cabalero80@gmail.com','',EMAIL_SVG,'Email Us','cabalero80@gmail.com')+
           '</div>'+
         '</div>';
       document.body.appendChild(el);
